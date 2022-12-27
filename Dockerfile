@@ -24,6 +24,8 @@ RUN apt-get install -y \
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+ADD ./dist /var/www/html
+
 # Expose Apache port
 EXPOSE 80
 
