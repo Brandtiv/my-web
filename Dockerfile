@@ -27,9 +27,12 @@ RUN a2enmod rewrite
 # Copy dist directory to web root
 COPY dist /var/www/html
 
+# Write Apache logs to stdout/stderr so they will be logged in CloudWatch
+RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
+    ln -sf /dev/stderr /var/log/apache2/error.log
+
 # Expose Apache port
 EXPOSE 80
 
 # Start Apache in the foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
-
