@@ -8,7 +8,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install -y apache2 && apt-get install -y php libapache2-mod-php
 
 # Install MySQL client and server
-RUN apt-get install -y mysql-server mysql-client
+# RUN apt-get install -y mysql-server mysql-client
 
 # Install PHP extensions
 RUN apt-get install -y \
@@ -16,7 +16,7 @@ RUN apt-get install -y \
     php-gd \
     php-intl \
     php-mbstring \
-    php-mysql \
+    #php-mysql \
     php-soap \
     php-xml \
     php-zip
