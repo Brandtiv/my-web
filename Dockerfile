@@ -25,7 +25,7 @@ RUN apt-get install -y \
 RUN a2enmod rewrite
 
 # Copy dist directory to web root
-#RUN cp dist/* /var/www/html
+COPY dist /var/www/html
 
 # Expose Apache port
 EXPOSE 80
